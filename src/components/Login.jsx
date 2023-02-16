@@ -24,10 +24,12 @@ function Login({ onLogin }) {
 
   return (
     <form onSubmit={handleLogin}>
-      <label>
-        Name:
-        <input type="text" value={username} onChange={(event) => setUsername(event.target.value)} />
-      </label>
+      <fieldset>
+        <label>
+          Name:
+          <input type="text" value={username} onChange={(event) => setUsername(event.target.value)} />
+        </label>
+      </fieldset>
       <button type="submit">Login</button>
     </form>
   );
