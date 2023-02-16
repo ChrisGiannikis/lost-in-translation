@@ -1,7 +1,7 @@
 import { useState } from "react";
-import LoginPage from "./pages/LoginPage";
-import TranslationPage from "./pages/TranslationPage";
-import ProfilePage from "./pages/ProfilePage";
+import LoginPage from "./components/Login";
+import TranslationPage from "./components/Translation";
+import ProfilePage from "./components/Profile";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
