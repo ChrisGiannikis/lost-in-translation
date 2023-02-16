@@ -2,8 +2,10 @@ import { useState } from "react";
 import LoginPage from "./components/Login";
 import TranslationPage from "./components/Translation";
 import ProfilePage from "./components/Profile";
+import {BrowserRouter, Routes, Route, Router } from "react-router-dom";
 
 function App() {
+
   const [loggedIn, setLoggedIn] = useState(false);
 
   const handleLogin = (username) => {
@@ -31,17 +33,24 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Sign Language Translation App</h1>
-      {loggedIn ? (
-        <>
-          <TranslationPage onLogout={handleLogout} />
-          <ProfilePage onLogout={handleLogout} />
-        </>
-      ) : (
-        <LoginPage onLogin={handleLogin} />
-      )}
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<LoginPage onLogin={handleLogin} />} />
+          <Route path="/translation" element={<TranslationPage onLogout={handleLogout} />} />
+          <Route path="/profile" element={<ProfilePage onLogout={handleLogout} />} />
+        </Routes>
+        {/* <h1>Sign Language Translation App</h1>
+        {loggedIn ? (
+          <>
+            <TranslationPage onLogout={handleLogout} />
+            <ProfilePage onLogout={handleLogout} />
+          </>
+        ) : (
+          <LoginPage onLogin={handleLogin} />
+        )} */}
+      </div>
+    </BrowserRouter>
   );
 }
 
