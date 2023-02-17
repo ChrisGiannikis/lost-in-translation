@@ -7,6 +7,21 @@
   background-color: #61dafb;
 }
 
+.App nav{
+  background-color: burlywood;
+  text-align: center;
+}
+
+.App nav li{
+  text-decoration: none;
+  display: inline-block;
+  padding: 20px;
+}
+
+.App nav a:hover{
+  color: #282c34;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
