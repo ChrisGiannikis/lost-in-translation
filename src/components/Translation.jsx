@@ -41,7 +41,7 @@ function Translation({ onLogout }) {
         ))}
       </label>
       <br />
-      <button onClick={onLogout}>Logout</button>
+      
     </div>
   );
 }
