@@ -3,6 +3,7 @@ import LoginPage from "./pages/LoginPage";
 import TranslationPage from "./pages/TranslationPage";
 import ProfilePage from "./pages/ProfilePage";
 import {BrowserRouter, Routes, Route, Router } from "react-router-dom";
+import './App.css'
 
 function App() {
 

@@ -3,6 +3,7 @@ import { loginUser } from '../api/user';
 import { storageSave } from '../utils/storage'
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../context/UserContext';
+import { STORAGE_KEY_USER } from '../const/storageKeys';
 
 function Login({ onLogin }) {
 
@@ -31,7 +32,7 @@ function Login({ onLogin }) {
       setApiError(error);
     }
     if (userResponse !== null){
-      storageSave('user', userResponse); //saving the user into local storage
+      storageSave(STORAGE_KEY_USER, userResponse); //saving the user into local storage
       setUser(userResponse);  //calling the user context
     }
     setLoading(false);

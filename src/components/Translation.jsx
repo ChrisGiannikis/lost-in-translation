@@ -1,4 +1,5 @@
 import { useState } from "react";
+import withAuth from "../hoc/withAuth";
 
 function Translation({ onLogout }) {
   const [inputText, setInputText] = useState("");
@@ -53,4 +54,4 @@ function Translation({ onLogout }) {
   );
 }
 
-export default Translation;
+export default withAuth(Translation);
