@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useUser } from '../context/UserContext';
 import { STORAGE_KEY_USER } from '../const/storageKeys';
 
-function Login({ onLogin }) {
+function Login() {
 
   //Hooks
   const { user, setUser} = useUser();
