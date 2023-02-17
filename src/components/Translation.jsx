@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { addTranslation } from "../api/translate";
+import { useUser } from "../context/UserContext";
 import withAuth from "../hoc/withAuth";
 
 function Translation({ onLogout }) {
   const [inputText, setInputText] = useState("");
   const [translatedText, setTranslatedText] = useState([]);
-
-  const handleTranslate = () => {
+  const {user} = useUser()
+  const handleTranslate = async () => {
     // Remove special characters and spaces and limit input to 40 letters
     const textToTranslate = inputText.replace(/[^\w]/g, "").substring(0, 40);
 
@@ -17,23 +19,13 @@ function Translation({ onLogout }) {
       images.push(`LostInTranslation_Resources/individial_signs/${letter}.png`);
     }
     setTranslatedText(images);
+    const trans = inputText
+    const [error,result] = await addTranslation(user,trans)
 
-    // Store the original text and the translated sign language in the API by making a POST request.
-    // You can use the fetch() function or a library like Axios for this.s
-    fetch("https://fc-assignment02-api-production.up.railway.app/translations", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username: localStorage.getItem("username"), originalText: inputText, translatedText: images }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    
   };
 
+  
   return (
     <div>
       <label>
@@ -43,13 +35,13 @@ function Translation({ onLogout }) {
       <button onClick={handleTranslate}>Translate</button>
       <br />
       <label>
-        Translated Text:
+        <h4>Translated Text:</h4> 
         {translatedText.map((image, index) => (
           <img key={index} src={image} alt="sign language" />
         ))}
       </label>
       <br />
-      <button onClick={onLogout}>Logout</button>
+      
     </div>
   );
 }
