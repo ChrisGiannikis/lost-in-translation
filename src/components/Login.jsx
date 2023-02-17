@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react';
 import { loginUser } from '../api/user';
 import { storageSave } from '../utils/storage'
-import { userHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useUser } from '../context/UserContext';
 
 function Login({ onLogin }) {
+
+  //Hooks
+  const { user, setUser} = useUser();
+  const navigate = useNavigate();
 
   //Local State
   const [username, setUsername] = useState('');
@@ -11,18 +16,23 @@ function Login({ onLogin }) {
   const [apiError, setApiError] = useState(null);
 
   //Side Effects
-  useEffect( () => {}, []);
+  useEffect( () => {  //when user signed in
+    if (user !== null){  //if user is not null
+      navigate('translation'); //navigate to translation
+    }
+  }, [user, navigate]);
 
   //Event handlers
   const handleLogin = async (event) => {
     event.preventDefault();
     setLoading(true);
-    const [error, user] = await loginUser(username);
+    const [error, userResponse] = await loginUser(username);
     if (error !== null){  //if an error happen when user tried to log in
       setApiError(error);
     }
-    if (user !== null){
-      storageSave('user', user);
+    if (userResponse !== null){
+      storageSave('user', userResponse); //saving the user into local storage
+      setUser(userResponse);  //calling the user context
     }
     setLoading(false);
   };
