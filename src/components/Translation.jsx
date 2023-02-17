@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { addTranslation } from "../api/translate";
+import { STORAGE_KEY_USER } from "../const/storageKeys";
 import { useUser } from "../context/UserContext";
 import withAuth from "../hoc/withAuth";
+import { storageSave } from "../utils/storage";
 
 function Translation({ onLogout }) {
   const [inputText, setInputText] = useState("");
   const [translatedText, setTranslatedText] = useState([]);
-  const {user} = useUser()
+  const {user, setUser} = useUser()
   const handleTranslate = async () => {
     // Remove special characters and spaces and limit input to 40 letters
     const textToTranslate = inputText.replace(/[^\w]/g, "").substring(0, 40);
@@ -20,9 +22,16 @@ function Translation({ onLogout }) {
     }
     setTranslatedText(images);
     const trans = inputText
-    const [error,result] = await addTranslation(user,trans)
-
-    
+    const [error,updatedUser] = await addTranslation(user,trans)
+    if(error !== null){
+      return
+    }
+    //keep ui state and server state in sync
+    storageSave(STORAGE_KEY_USER,updatedUser)
+    //update context state
+    setUser(updatedUser)
+    console.log('Error',error);
+    console.log('updatedUser', updatedUser);
   };
 
   

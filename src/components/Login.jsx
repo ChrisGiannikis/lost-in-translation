@@ -6,7 +6,7 @@ import { useUser } from '../context/UserContext';
 import { STORAGE_KEY_USER } from '../const/storageKeys';
 import '../Login.css'
 
-function Login({ onLogin }) {
+function Login() {
 
   //Hooks
   const { user, setUser} = useUser();

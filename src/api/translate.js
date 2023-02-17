@@ -18,6 +18,20 @@ catch(error){
 return [error.message,null]
 }
 }
-export const translationClearhistory = (userId) => {
+export const translationClearhistory = async (userId) => {
+    try {
+        const response = await fetch(`${apiUrl}/translations/${userId}`,{
+            method:'PATCH',
+            headers:createHeaders(),
+            body: JSON.stringify({favourites:[]})
+        }
+        )
+        if(!response.ok){throw new Error('Could not update the translation list')}
+        const result = await response.json()
+        return[null,result]
+        }
+        catch(error){
+        return [error.message,null]
+        }
     
 }
