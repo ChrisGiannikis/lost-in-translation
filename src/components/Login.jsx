@@ -4,6 +4,7 @@ import { storageSave } from '../utils/storage'
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../context/UserContext';
 import { STORAGE_KEY_USER } from '../const/storageKeys';
+import '../Login.css'
 
 function Login({ onLogin }) {
 
@@ -40,6 +41,15 @@ function Login({ onLogin }) {
 
   return (
     <form onSubmit={handleLogin}>
+      <div>
+        <ul>
+          <li><img src={require("../Logo.png")} alt="Logo image"/></li>
+          <li>
+            <h2> Lost in Translation </h2>
+            <h3>  Get started </h3>
+          </li>
+        </ul>
+      </div>
       <fieldset>
         <label>
           Name:
