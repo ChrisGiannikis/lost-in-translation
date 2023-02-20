@@ -42,7 +42,7 @@ function Login() {
   return (
     <form onSubmit={handleLogin}>
         <section id='Login_Header'>
-      <img src=".\LostInTranslation_Resources\Splash.svg" alt="" />
+    
       <img src="./LostInTranslation_Resources/Logo-Hello.png" alt="Hello_img" />
       <h1>Lost in Translation</h1>
       <h2>Get Started</h2>
