@@ -37,9 +37,8 @@ function Translation({ onLogout }) {
   
   return (
     <div>
-      <label>
-        Input Text:
-        <input type="text" value={inputText} onChange={(e) => setInputText(e.target.value)} />
+      <label>        
+        <input placeholder='Enter text for translation' type="text" value={inputText} onChange={(e) => setInputText(e.target.value)} />
       </label>
       <button className="translation_btn" onClick={handleTranslate}>Translate</button>
       <br />

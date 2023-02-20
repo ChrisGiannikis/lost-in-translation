@@ -49,7 +49,7 @@ function Login() {
       </section>
       <fieldset>
         <label>
-          Name:
+          
           <input type="text" placeholder='Whats your name?' value={username} onChange={(event) => setUsername(event.target.value)} required/>
         
       <button className='login_btn' type="submit" disabled={loading}>Login</button>

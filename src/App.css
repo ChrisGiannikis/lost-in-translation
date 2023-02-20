@@ -1,8 +1,8 @@
-
 .App {
   text-align: center;
   background-color: #FFC75F;  
   display: block;
+  padding-bottom: 100px;
 }
 .App header{
   text-align: center;
@@ -24,43 +24,44 @@ text-align: center;
 }
 
 .App fieldset{
+  background-color: #efefef;
+  margin: 0 700px 0 700px;
   border: #282c34;
-  width: 100%;
-  padding: 12px 20px;
-padding-bottom: 100px;
+  padding: 50px 0 50px 0;
+  box-shadow: #282c34;
+  outline:rgba(black, 0.3);
+  border-radius: 2em;
+  border-bottom: purple solid ;
 }
 .App label {  
   top: 0;
   font-size: 1rem;
-  color: gray;
+  
 }
 
 .login_btn{
   position: absolute;
   background-color: purple;
   color: #efefef;
-  padding: 0.610rem;
-  margin-left: 157px;
+  margin-top: -36px;
+  margin-left: 158px;
   z-index: 9999;
-  border: 0;
-  outline:rgba(black, 0.3);
-  border-radius: 5em;
-  justify-content: center; 
+
  }
  
 .App input{
-  position: absolute;
+  display: block;
+  position: relative;
   width: 400px;
-  transform: translateX(-50%);
-  padding: 0.750em;  
-  box-shadow: 0 0.125em 0.3125em rgba(black, 0.3);    
+  padding: 0.750em;   
   margin: auto;
   border: 0;
   outline:rgba(black, 0.3);
   border-radius: 5em;
-  justify-content: center;
-  
+
+ border:1px grey solid;
 }
+
 
 .translation_btn{
   position: absolute;
@@ -68,12 +69,15 @@ padding-bottom: 100px;
   color: #efefef;
   padding: 0.610rem;
   margin-left: 135px;
+  margin-top: -36px;
   z-index: 9999;
   border: 0;
   outline:rgba(black, 0.3);
   border-radius: 5em;
   justify-content: center; 
 }
+
+
 
 .App button{
   background-color: purple;
