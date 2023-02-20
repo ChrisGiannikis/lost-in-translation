@@ -41,9 +41,9 @@ function Translation({ onLogout }) {
         Input Text:
         <input type="text" value={inputText} onChange={(e) => setInputText(e.target.value)} />
       </label>
-      <button onClick={handleTranslate}>Translate</button>
+      <button className="translation_btn" onClick={handleTranslate}>Translate</button>
       <br />
-      <label>
+      <label class="tr_text">
         <h4>Translated Text:</h4> 
         {translatedText.map((image, index) => (
           <img key={index} src={image} alt="sign language" />

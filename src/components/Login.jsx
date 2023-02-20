@@ -40,15 +40,25 @@ function Login() {
 
   return (
     <form onSubmit={handleLogin}>
+      <section id='Login_Header'>
+      <img src=".\LostInTranslation_Resources\Splash.svg" alt="" />
+      <img src="./LostInTranslation_Resources/Logo-Hello.png" alt="Hello_img" />
+      <h1>Lost in Translation</h1>
+      <h2>Get Started</h2>
+      </section>
       <fieldset>
         <label>
           Name:
-          <input type="text" value={username} onChange={(event) => setUsername(event.target.value)} />
-        </label>
-      </fieldset>
-      <button type="submit" disabled={loading}>Login</button>
+          <input type="text" placeholder='Whats your name?' value={username} onChange={(event) => setUsername(event.target.value)} required/>
+        
+      <button className='login_btn' type="submit" disabled={loading}>Login</button>
       {loading && <p>Logging in...</p>}
       {apiError && <p>{apiError}</p>}
+        </label>
+        
+      </fieldset>
+      
+    
     </form>
   );
 }

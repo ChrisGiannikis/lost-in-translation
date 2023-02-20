@@ -32,10 +32,10 @@ const ProfileActions = () => {
         <Link to="/Translation">Translations</Link>
       </li>
       <li>
-        <button onClick={handleClearHistoryClick}>Clear History</button>
+        <button class="clr" onClick={handleClearHistoryClick}>Clear History</button>
       </li>
       <li>
-        <button onClick={handleLogoutClick}>Logout</button>
+        <button class="logout" onClick={handleLogoutClick}>Logout</button>
       </li>
     </ul>
   );

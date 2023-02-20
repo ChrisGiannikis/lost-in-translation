@@ -25,15 +25,6 @@ function App() {
           <Route path="/translation" element={<TranslationPage onLogout={handleLogout} />} />
           <Route path="/profile" element={<ProfilePage onLogout={handleLogout} />} />
         </Routes>
-        {/* <h1>Sign Language Translation App</h1>
-        {loggedIn ? (
-          <>
-            <TranslationPage onLogout={handleLogout} />
-            <ProfilePage onLogout={handleLogout} />
-          </>
-        ) : (
-          <LoginPage onLogin={handleLogin} />
-        )} */}
       </div>
     </BrowserRouter>
   );

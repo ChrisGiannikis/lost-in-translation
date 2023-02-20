@@ -1,61 +1,149 @@
+
 .App {
   text-align: center;
-  background-color: #61dafb;
+  background-color: #FFC75F;  
+  display: block;
 }
-.App Login{
+.App header{
   text-align: center;
-  background-color: #61dafb;
+  
+}
+.App h1 {
+font-family: 'Love Ya Like A Sister';
+font-size:xx-large;
+text-align: center;
+color: #efefef;
+padding: 12px 20px;
+margin: 20px;
+}
+.App h2,h4 {
+font-family: 'Sanchez';
+color: #efefef;
+text-align: center;
+
 }
 
+.App fieldset{
+  border: #282c34;
+  width: 100%;
+  padding: 12px 20px;
+padding-bottom: 100px;
+}
+.App label {  
+  top: 0;
+  font-size: 1rem;
+  color: gray;
+}
+
+.login_btn{
+  position: absolute;
+  background-color: purple;
+  color: #efefef;
+  padding: 0.610rem;
+  margin-left: 157px;
+  z-index: 9999;
+  border: 0;
+  outline:rgba(black, 0.3);
+  border-radius: 5em;
+  justify-content: center; 
+ }
+ 
+.App input{
+  position: absolute;
+  width: 400px;
+  transform: translateX(-50%);
+  padding: 0.750em;  
+  box-shadow: 0 0.125em 0.3125em rgba(black, 0.3);    
+  margin: auto;
+  border: 0;
+  outline:rgba(black, 0.3);
+  border-radius: 5em;
+  justify-content: center;
+  
+}
+
+.translation_btn{
+  position: absolute;
+  background-color: purple;
+  color: #efefef;
+  padding: 0.610rem;
+  margin-left: 135px;
+  z-index: 9999;
+  border: 0;
+  outline:rgba(black, 0.3);
+  border-radius: 5em;
+  justify-content: center; 
+}
+
+.App button{
+  background-color: purple;
+  color: #efefef;
+  padding: 0.610rem;
+  border: 1px solid black;
+  outline:rgba(black, 0.3);
+  border-radius: 5em;
+  justify-content: center; 
+}
+
+
 .App nav{
-  background-color: burlywood;
-  text-align: center;
+  position: relative;
+  background-color: #E7B355;
+  text-align: left;
+  border-bottom:1px solid;
+  border-color: grey;
+  padding: 10px 10px 100px 10px;
+  margin-bottom: 100px;
+  max-height: 80px;
+}
+.App nav img{
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  width: 50px;
+  float: left ;
+}
+
+.App nav h1{
+  display: block;
+  position: relative;
+  padding: 0px 0px 0px 10px;
+  float: left;
+  text-align: left;
+  margin: 10px 0 10px 0 ;
 }
 
 .App nav li{
+  
   text-decoration: none;
   display: inline-block;
   padding: 20px;
+  color: white;
+  float: right;
 }
+
+
 
 .App nav a:hover{
   color: #282c34;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.App li{
+  text-decoration: none;
+  margin-bottom: 20px;
+  list-style-type: none;
+}
+.App img{
+  position: relative;
+  width: 300px;
+  padding: 12px 20px;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-.App Translation{
-  background-color: #61dafb;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
+
+
