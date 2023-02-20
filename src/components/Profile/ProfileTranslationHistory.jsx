@@ -1,7 +1,7 @@
 import ProfileTranslationHistoryitem from "./ProfileTranslationHistoryitem";
 
-const ProfileTranslationHistory = ({ favourites }) => {
-  const translationList = favourites.map(
+const ProfileTranslationHistory = ({ translations }) => {
+  const translationList = translations.map(
     (translation,index) => <ProfileTranslationHistoryitem key={index +'-' +translation} translation={translation}/>)
 
   return (

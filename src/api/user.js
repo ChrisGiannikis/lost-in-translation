@@ -29,6 +29,7 @@ const createUser = async (username) => {
             throw new Error(`Could not create user with username: ${username}`); //throw an error
         }
         const user = await response.json(); //takes the user
+        createTranslation(user.username,user.id);   //creates a new reference to that user at translations api 
         return [null, user];
     }catch(error){
         return [error.message, []]
@@ -63,6 +64,27 @@ export const userById = async (userId) => {
           return [null,user]
     }
     catch(error){
-return[error.message,null]
+        return[error.message,null]
+    }
+}
+
+const createTranslation = async (username, id) => {
+    try{
+        const response = await fetch(`${API_URL}/translations/`, { //trying to connect with the api at translations
+            method:'POST',                      //with POST method creates a new translation,
+            headers: createHeaders(),           //the custom headers
+            body: JSON.stringify({              //and the json body of a new user with translation history in string 
+                id,                             //adds the id of the user
+                username,                       //adds the username of the user
+                translations : []    //adds a list with the first translation of the user
+            })
+        });  
+        if(!response.ok){  //if connection fail
+            throw new Error(`Could not create user with username: ${username}`); //throw an error
+        }
+        const translation = await response.json(); //takes the translation
+        return [null, translation];
+    }catch(error){
+        return [error.message, []]
     }
 }

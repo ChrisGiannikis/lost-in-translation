@@ -42,7 +42,7 @@ function Translation({ onLogout }) {
       </label>
       <button className="translation_btn" onClick={handleTranslate}>Translate</button>
       <br />
-      <label class="tr_text">
+      <label className="tr_text">
         <h4>Translated Text:</h4> 
         {translatedText.map((image, index) => (
           <img key={index} src={image} alt="sign language" />
