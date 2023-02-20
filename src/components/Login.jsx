@@ -4,6 +4,7 @@ import { storageSave } from '../utils/storage'
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../context/UserContext';
 import { STORAGE_KEY_USER } from '../const/storageKeys';
+import '../Login.css'
 
 function Login() {
 
@@ -40,7 +41,7 @@ function Login() {
 
   return (
     <form onSubmit={handleLogin}>
-      <section id='Login_Header'>
+        <section id='Login_Header'>
       <img src=".\LostInTranslation_Resources\Splash.svg" alt="" />
       <img src="./LostInTranslation_Resources/Logo-Hello.png" alt="Hello_img" />
       <h1>Lost in Translation</h1>
