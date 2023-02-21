@@ -51,6 +51,7 @@ export const loginUser = async (username) => {
 
     //if there is not error and no user exists 
     return await createUser(username);
+   
 
 }
 
@@ -70,7 +71,7 @@ export const userById = async (userId) => {
 
 const createTranslation = async (username, id) => {
     try{
-        const response = await fetch(`${API_URL}/translations/`, { //trying to connect with the api at translations
+        const response = await fetch(`${API_URL}/translations`, { //trying to connect with the api at translations
             method:'POST',                      //with POST method creates a new translation,
             headers: createHeaders(),           //the custom headers
             body: JSON.stringify({              //and the json body of a new user with translation history in string 

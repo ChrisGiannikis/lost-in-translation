@@ -22,7 +22,7 @@ const ProfileActions = () => {
       return
     }
 
-    const updatedUser= {...user,favourites:[]}
+    const updatedUser= {...user,translations:[]}
     storageSave()
     setUser(updatedUser)
   }
@@ -32,10 +32,10 @@ const ProfileActions = () => {
         <Link to="/Translation">Translations</Link>
       </li>
       <li>
-        <button class="clr" onClick={handleClearHistoryClick}>Clear History</button>
+        <button  onClick={handleClearHistoryClick}>Clear History</button>
       </li>
       <li>
-        <button class="logout" onClick={handleLogoutClick}>Logout</button>
+        <button  onClick={handleLogoutClick}>Logout</button>
       </li>
     </ul>
   );
