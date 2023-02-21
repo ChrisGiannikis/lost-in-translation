@@ -23,20 +23,17 @@ const ProfileActions = () => {
     }
 
     const updatedUser= {...user,translations:[]}
-    storageSave(updatedUser)
-    setUser(updatedUser)
+    setUser(updatedUser)  //sets the user with the empty translations list
+    window.location.reload(false);  //reload the page
   }
   return (
     <ul>
-      <li>
-        <Link to="/Translation">Translations</Link>
-      </li>
-      <li>
+      <li id="btn-li">
         <button  onClick={handleClearHistoryClick}>Clear History</button>
       </li>
-      <li>
+      <li id="btn-li">
         <button  onClick={handleLogoutClick}>Logout</button>
-</li>
+      </li>
     </ul>
   );
 };
