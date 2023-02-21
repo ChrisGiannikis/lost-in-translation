@@ -38,7 +38,7 @@ function Translation() {
   return (
     <div>
       <label>        
-        <input placeholder='Enter text for translation' type="text" value={inputText} onChange={(e) => setInputText(e.target.value)} />
+        <input placeholder='Enter text for translation' type="text" maxLength="40" value={inputText} onChange={(e) => setInputText(e.target.value)} />
       </label>
       <button className="translation_btn" onClick={handleTranslate}>Translate</button>
       <br />
