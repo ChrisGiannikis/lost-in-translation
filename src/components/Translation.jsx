@@ -5,7 +5,7 @@ import { useUser } from "../context/UserContext";
 import withAuth from "../hoc/withAuth";
 import { storageSave } from "../utils/storage";
 
-function Translation({ onLogout }) {
+function Translation() {
   const [inputText, setInputText] = useState("");
   const [translatedText, setTranslatedText] = useState([]);
   const {user, setUser} = useUser()
