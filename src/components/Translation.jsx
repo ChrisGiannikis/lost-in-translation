@@ -1,10 +1,15 @@
 import { useState } from "react";
+import { addTranslation } from "../api/translate";
+import { STORAGE_KEY_USER } from "../const/storageKeys";
+import { useUser } from "../context/UserContext";
+import withAuth from "../hoc/withAuth";
+import { storageSave } from "../utils/storage";
 
-function Translation({ onLogout }) {
+function Translation() {
   const [inputText, setInputText] = useState("");
   const [translatedText, setTranslatedText] = useState([]);
-
-  const handleTranslate = () => {
+  const {user, setUser} = useUser()
+  const handleTranslate = async () => {
     // Remove special characters and spaces and limit input to 40 letters
     const textToTranslate = inputText.replace(/[^\w]/g, "").substring(0, 40);
 
@@ -16,41 +21,37 @@ function Translation({ onLogout }) {
       images.push(`LostInTranslation_Resources/individial_signs/${letter}.png`);
     }
     setTranslatedText(images);
-
-    // Store the original text and the translated sign language in the API by making a POST request.
-    // You can use the fetch() function or a library like Axios for this.s
-    fetch("https://fc-assignment02-api-production.up.railway.app/translations", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username: localStorage.getItem("username"), originalText: inputText, translatedText: images }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    const trans = inputText
+    const [error,updatedUser] = await addTranslation(user,trans)
+    if(error !== null){
+      return
+    }
+    //keep ui state and server state in sync
+    storageSave(STORAGE_KEY_USER,updatedUser)
+    //update context state
+    setUser(updatedUser)
+    console.log('Error',error);
+    console.log('updatedUser', updatedUser);
   };
 
+  
   return (
     <div>
-      <label>
-        Input Text:
-        <input type="text" value={inputText} onChange={(e) => setInputText(e.target.value)} />
+      <label>        
+        <input placeholder='Enter text for translation' type="text" maxLength="40" value={inputText} onChange={(e) => setInputText(e.target.value)} />
       </label>
-      <button onClick={handleTranslate}>Translate</button>
+      <button className="translation_btn" onClick={handleTranslate}>Translate</button>
       <br />
-      <label>
-        Translated Text:
+      <label className="tr_text">
+        <h4>Translated Text:</h4> 
         {translatedText.map((image, index) => (
           <img key={index} src={image} alt="sign language" />
         ))}
       </label>
       <br />
-      <button onClick={onLogout}>Logout</button>
+      
     </div>
   );
 }
 
-export default Translation;
+export default withAuth(Translation);

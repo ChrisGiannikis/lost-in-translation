@@ -1,0 +1,9 @@
+div li{
+    padding: 20px;
+    display: inline-block;
+  }
+
+img{
+    width: 100px;
+    height: 100px;
+}

@@ -2,27 +2,13 @@ import { useState } from "react";
 import LoginPage from "./pages/LoginPage";
 import TranslationPage from "./pages/TranslationPage";
 import ProfilePage from "./pages/ProfilePage";
+import {BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import './App.css'
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
 
-  const handleLogin = (username) => {
-    // Store the username in the API and set the loggedIn state variable to true
-    fetch("https://fc-assignment02-api-production.up.railway.app/users", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        localStorage.setItem("username", username);
-        setLoggedIn(true);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  };
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const handleLogout = () => {
     // Clear the username from the browser storage and set the loggedIn state variable to false
@@ -31,17 +17,23 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Sign Language Translation App</h1>
-      {loggedIn ? (
-        <>
-          <TranslationPage onLogout={handleLogout} />
-          <ProfilePage onLogout={handleLogout} />
-        </>
-      ) : (
-        <LoginPage onLogin={handleLogin} />
-      )}
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<LoginPage/>} />
+          <Route path="/translation" element={<TranslationPage onLogout={handleLogout} />} />
+          <Route path="/profile" element={<ProfilePage onLogout={handleLogout} />} />
+          <Route path='*' element={
+              <>
+                <h1>There's nothing here 👻</h1>
+                <NavLink to="/">Return Home</NavLink>
+              </>
+            } />
+
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
