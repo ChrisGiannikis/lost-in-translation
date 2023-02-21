@@ -10,7 +10,7 @@ export const storageSave = (key, value) => {
 
 export const storageRead = key => {
     const data = localStorage.getItem(key);
-    if(data){
+    if(data){   
         return JSON.parse(data);
     }
     return null;

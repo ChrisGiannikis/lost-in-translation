@@ -1,8 +1,18 @@
 import ProfileTranslationHistoryitem from "./ProfileTranslationHistoryitem";
 
 const ProfileTranslationHistory = ({ translations }) => {
-  const translationList = translations.map(
-    (translation,index) => <ProfileTranslationHistoryitem key={index +'-' +translation} translation={translation}/>)
+  let translationList = '';
+  if (typeof translations !== 'undefined'){
+    translationList = translations.map(
+      (translation,index) => <ProfileTranslationHistoryitem key={index +'-' +translation} translation={translation}/>);
+  }else{
+    translationList = 'No translations yet';
+  }
+
+  if(translationList.length > 10){
+    translationList = translationList.slice(translationList.length-10);
+  }
+  
 
   return (
     <section>

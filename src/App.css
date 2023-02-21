@@ -127,15 +127,30 @@ text-align: center;
 
 
 
-.App nav a:hover{
+.App nav li:hover{
   color: #282c34;
 }
 
+.translation_btn:active {
+  transform: translateY(4px);
+}
 
-.App li{
+#btn-li:active {
+  transform: translateY(4px);
+}
+
+#btn-li{
   text-decoration: none;
   margin-bottom: 20px;
   list-style-type: none;
+  display: inline-block;
+}
+
+.App li{
+  text-decoration: none;
+  margin-bottom: 10px;
+  list-style-type: none;
+  display: list-item;
 }
 .App img{
   position: relative;
