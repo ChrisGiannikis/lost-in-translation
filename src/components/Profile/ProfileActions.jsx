@@ -36,7 +36,7 @@ const ProfileActions = () => {
       </li>
       <li>
         <button  onClick={handleLogoutClick}>Logout</button>
-      </li>
+</li>
     </ul>
   );
 };

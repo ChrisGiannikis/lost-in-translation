@@ -12,11 +12,12 @@ export const useUser = () => {
 //managing the state with provider
 const UserProvider = ({children}) => {
 
-    const [user, setUser] = useState(storageRead(STORAGE_KEY_USER));
+    const [user, setUser, translation] = useState(storageRead(STORAGE_KEY_USER));
 
     const state = {
         user,
-        setUser
+        setUser,
+        translation
     }
 
     return(

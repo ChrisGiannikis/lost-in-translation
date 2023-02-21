@@ -9,6 +9,7 @@ import ProfileTranslationsHistory from './Profile/ProfileTranslationHistory';
 const Profile = () => {
 
 const {user, setUser} = useUser()
+
   
 useEffect(() =>{
 const findUser = async () => {
@@ -24,7 +25,7 @@ findUser()
       <h1>Profile Page</h1>
       <ProfileHeader username={user.username}/>
       <ProfileActions />
-      <ProfileTranslationsHistory favourites={user.favourites}/>
+      <ProfileTranslationsHistory translations={user.translations}/>
     </div>
   );
 }
