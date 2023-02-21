@@ -14,7 +14,7 @@ const ProfileActions = () => {
     }
   };
   const handleClearHistoryClick = async () => {
-    if(window.confirm('Are you sure?')){
+    if(!window.confirm('Are you sure?')){
       return
     }
     const[clearError] = await translationClearhistory(user.id)
@@ -23,7 +23,7 @@ const ProfileActions = () => {
     }
 
     const updatedUser= {...user,translations:[]}
-    storageSave()
+    storageSave(updatedUser)
     setUser(updatedUser)
   }
   return (
