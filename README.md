@@ -1,8 +1,8 @@
-**Lost in Translation**
+# **Lost in Translation**
 
 Welcome to the Lost in Translation Application! This application is built using React and is designed to help users translate English words and short sentences into American Sign Language (ASL).
 
-**Getting Started**
+# **Getting Started**
 
 To get started with this project, follow these steps:
 
@@ -11,7 +11,7 @@ To get started with this project, follow these steps:
 -   Start the development server by running **npm start** or **yarn start**.
 -   Navigate to **http://localhost:3000** in your web browser to see the application.
 
-**Usage**
+# **Usage**
 
 **Login Page**
 
@@ -31,7 +31,7 @@ The profile page will display the last 10 translations for the current user. You
 
 To log out, click on the "Logout" button. This will clear all the storage and return you to the start page.
 
-**API**
+# **API**
 
 This application uses the following API:
 
@@ -39,7 +39,7 @@ This application uses the following API:
 
 This API allows the application to store user information and translation history.
 
-**Technologies Used**
+# **Technologies Used**
 
 This project was built using the following technologies:
 
@@ -47,22 +47,22 @@ This project was built using the following technologies:
 -   CSS
 -   Node.js
 
-**Contribution**
+# **Contribution**
 
 Christos Giannikis https://github.com/ChrisGiannikis
 
 Fotis Staikos https://github.com/NotFotis
 
-**GitHub**
+# **GitHub**
 
 We made 3 branches to work with. The first thought was to have one branch for each of us to upload our changes at our own branch. However, during work, we decided to keep the Christos branch as a collective back-up branch, the Fotis branch as our initial branch and the default main branch, which is the final product of the assignment.
 
-**URL**
+# **URL**
 
 The application is published with vercel hosting platform. The url is :
 
 <https://lost-in-translation-fxjxfr8pr-chrisgiannikis.vercel.app>
 
-**Conclusion**
+# **Conclusion**
 
 Thank you for using the Sign Language Translator Application! We hope it helps you communicate more effectively with those who use American Sign Language.
