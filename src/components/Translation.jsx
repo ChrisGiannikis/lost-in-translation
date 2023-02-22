@@ -34,7 +34,7 @@ function Translation() {
     console.log('updatedUser', updatedUser);
   };
 
-  
+    // Rendering Translation components
   return (
     <div>
       <label>        
