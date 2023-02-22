@@ -1,38 +1,169 @@
 .App {
   text-align: center;
+  background-color: #FFC75F;  
+  display: block;
+  padding-bottom: 100px;
+}
+.App header{
+  text-align: center;
+  
+}
+.App h1 {
+font-family: 'Love Ya Like A Sister';
+font-size:xx-large;
+text-align: center;
+color: #efefef;
+padding: 12px 20px;
+margin: 20px;
+}
+.App h2,h4 {
+font-family: 'Sanchez';
+color: #efefef;
+text-align: center;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App fieldset{
+  background-color: #efefef;
+  margin: 0 30% 0 30%;
+  border: #282c34;
+  padding: 50px 0 50px 0;
+  box-shadow: #282c34;
+  outline:rgba(black, 0.3);
+  border-radius: 2em;
+  border-bottom: purple solid ;
+}
+.App label {  
+  top: 0;
+  font-size: 1rem;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.login_btn{
+  position: absolute;
+  background-color: purple;
+  color: #efefef;
+  margin-top: -36px;
+  margin-left: 158px;
+  z-index: 9999;
+
+ }
+ 
+.App input{
+  display: block;
+  position: relative;
+  width: 400px;
+  padding: 0.750em;   
+  margin: auto;
+  border: 0;
+  outline:rgba(black, 0.3);
+  border-radius: 5em;
+
+ border:1px grey solid;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+.translation_btn{
+  position: absolute;
+  background-color: purple;
+  color: #efefef;
+  padding: 0.610rem;
+  margin-left: 135px;
+  margin-top: -36px;
+  z-index: 9999;
+  border: 0;
+  outline:rgba(black, 0.3);
+  border-radius: 5em;
+  justify-content: center; 
+}
+
+
+
+.App button{
+  background-color: purple;
+  color: #efefef;
+  padding: 0.610rem;
+  border: 0;
+  outline:rgba(black, 0.3);
+  border-radius: 5em;
+  justify-content: center; 
+}
+
+
+.App nav{
+  position: relative;
+  background-color: #E7B355;
+  text-align: left;
+  border-bottom:1px solid;
+  border-color: grey;
+  padding: 10px 10px 100px 10px;
+  margin-bottom: 100px;
+  max-height: 80px;
+}
+.App nav img{
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  width: 50px;
+  float: left;
+}
+
+.App nav h1{
+  display: block;
+  position: relative;
+  padding: 0px 0px 0px 10px;
+  float: left;
+  text-align: left;
+  margin: 10px 0 10px 0 ;
+}
+
+.App nav li{
+  
+  text-decoration: none;
+  display: inline-block;
+  padding: 20px;
   color: white;
+  float: right;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+.App nav li:hover{
+  color: #282c34;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.translation_btn:active {
+  transform: translateY(4px);
 }
+
+#btn-li:active {
+  transform: translateY(4px);
+}
+
+#btn-li{
+  text-decoration: none;
+  margin-bottom: 20px;
+  list-style-type: none;
+  display: inline-block;
+}
+
+.App li{
+  text-decoration: none;
+  margin-bottom: 10px;
+  list-style-type: none;
+  display: list-item;
+}
+.App img{
+  position: relative;
+  width: 100px;
+  height: auto;
+  padding: 12px 20px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
