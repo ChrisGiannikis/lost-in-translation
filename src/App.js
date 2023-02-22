@@ -8,7 +8,7 @@ import Navbar from "./components/Navbar/Navbar";
 
 function App() {
 
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [setLoggedIn] = useState(false);
 
   const handleLogout = () => {
     // Clear the username from the browser storage and set the loggedIn state variable to false

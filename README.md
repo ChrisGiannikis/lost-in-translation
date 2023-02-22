@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# **Lost in Translation**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Lost in Translation Application! This application is built using React and is designed to help users translate English words and short sentences into American Sign Language (ASL).
 
-## Available Scripts
+# **Getting Started**
 
-In the project directory, you can run:
+To get started with this project, follow these steps:
 
-### `npm start`
+-   Clone the repository to your local machine.
+-   Install the necessary dependencies by running **npm install** or **yarn install**.
+-   Start the development server by running **npm start** or **yarn start**.
+-   Navigate to **http://localhost:3000** in your web browser to see the application.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# **Usage**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Login Page**
 
-### `npm test`
+To get started, you will need to log in to the application using your name. The login page will appear when you first launch the application. Once you enter your name, it will be saved to the Translation API. If you are already logged in, you will be redirected to the Translation page.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Translation Page**
 
-### `npm run build`
+On the Translation page, you will see an input box where you can type the text you want to translate. Click on the "translate" button to trigger the translation. The translated text will appear in the box below. Please note that only the text will be stored in the API, not the sign language images.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The maximum length of input may be limited to 40 characters. Special characters and spaces may be ignored.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Profile Page**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The profile page will display the last 10 translations for the current user. You will only see the text of the translation, not the sign language images. There is a button to clear the translations. Clicking on it will "delete" the records from the API, and they will no longer display on the profile page.
 
-### `npm run eject`
+**Logout Button**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To log out, click on the "Logout" button. This will clear all the storage and return you to the start page.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# **API**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This application uses the following API:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**https://fc1-assignment02-api-production.up.railway.app**
 
-## Learn More
+This API allows the application to store user information and translation history.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# **Technologies Used**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project was built using the following technologies:
 
-### Code Splitting
+-   React
+-   CSS
+-   Node.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# **Contribution**
 
-### Analyzing the Bundle Size
+Christos Giannikis https://github.com/ChrisGiannikis
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Fotis Staikos https://github.com/NotFotis
 
-### Making a Progressive Web App
+# **GitHub**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+We made 3 branches to work with. The first thought was to have one branch for each of us to upload our changes at our own branch. However, during work, we decided to keep the Christos branch as a collective back-up branch, the Fotis branch as our initial branch and the default main branch, which is the final product of the assignment.
 
-### Advanced Configuration
+# **URL**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The application is published with vercel hosting platform. The url is :
 
-### Deployment
+<https://lost-in-translation-fxjxfr8pr-chrisgiannikis.vercel.app>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# **Conclusion**
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for using the Sign Language Translator Application! We hope it helps you communicate more effectively with those who use American Sign Language.
